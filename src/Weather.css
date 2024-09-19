@@ -1,0 +1,53 @@
+.Weather h1 {
+  font-size: 38px;
+}
+
+.Weather .temperature {
+  display: flex;
+  justify-content: left;
+}
+
+.Weather .temperature-value {
+  font-size: 88px;
+  font-weight: bold;
+  line-height: 88px;
+}
+
+.Weather .temperature-degrees {
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.Weather .temperature-icon {
+  font-size: 60px;
+}
+
+.Weather .condition {
+  color: rgba(92, 92, 211, 1);
+  font-size: 28px;
+}
+
+.Weather .additional-info {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.Weather .additional-info-box {
+  background: rgba(92, 92, 211, 0.05);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+}
+
+.Weather .additional-info-box:hover {
+  background: rgba(92, 92, 211, 0.09);
+  transform: scale(1.05);
+}
+
+.Weather .additional-info-box strong {
+  color: rgba(92, 92, 211, 1);
+}
+
+.Weather .last-updated {
+  font-size: 14px;
+  opacity: 0.5;
+}
