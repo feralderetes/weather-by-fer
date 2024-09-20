@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -10,12 +11,14 @@ export default function Weather(props) {
       country: response.data.country,
       temperature: response.data.temperature.current,
       condition: response.data.condition.description,
+      date: new Date(response.data.time * 1000),
       feelsLike: response.data.temperature.feels_like,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       airPressure: response.data.temperature.pressure,
       loaded: true,
     });
+    console.log(response.data);
   }
 
   if (weatherData.loaded) {
@@ -57,7 +60,9 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
-        <div className="last-updated mt-2">Last updated: Wednesday 12:32</div>
+        <div className="last-updated mt-2">
+          Last updated: <FormattedDate date={weatherData.date} />
+        </div>
       </div>
     );
   } else {
