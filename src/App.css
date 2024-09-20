@@ -10,28 +10,6 @@
   max-width: 600px;
 }
 
-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.search-bar {
-  background: rgba(92, 92, 211, 0.1);
-  border: none;
-  transition: all 200ms ease-in-out;
-}
-
-.search-btn {
-  background: rgba(92, 92, 211, 0.9);
-  border: none;
-  color: white;
-  transition: all 200ms ease-in-out;
-}
-
-.search-btn:hover {
-  background: rgba(92, 92, 211, 1);
-  color: white;
-}
-
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(0, 0, 0, 0.6);
