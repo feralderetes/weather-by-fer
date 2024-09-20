@@ -13,7 +13,9 @@ export default function WeatherInfo(props) {
             {Math.round(props.data.temperature)}
           </span>
           <span className="temperature-degrees">°</span>
-          <span className="temperature-icon">🌤️</span>
+          <span className="temperature-icon">
+            <img src={props.data.iconUrl} alt={props.data.condition}></img>
+          </span>
         </div>
         <div className="condition text-capitalize">{props.data.condition}</div>
       </div>

@@ -27,6 +27,7 @@ export default function Weather(props) {
       city: response.data.city,
       country: response.data.country,
       temperature: response.data.temperature.current,
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
       condition: response.data.condition.description,
       date: new Date(response.data.time * 1000),
       feelsLike: response.data.temperature.feels_like,
