@@ -22,21 +22,25 @@ export default function WeatherInfo(props) {
       <div className="additional-info col-6">
         <div className="row">
           <div className="col-5 additional-info-box m-1 p-2">
-            Feels Like <br />
+            <span class="material-symbols-outlined">device_thermostat</span>
+            <div>Feels Like</div>
             <strong>{Math.round(props.data.feelsLike)}°</strong>
           </div>
           <div className="col-5 additional-info-box m-1 p-2">
-            Humidity <br />
+            <span class="material-symbols-outlined">humidity_percentage </span>
+            <div>Humidity</div>
             <strong>{props.data.humidity}%</strong>
           </div>
         </div>
         <div className="row">
           <div className="col-5 additional-info-box m-1 p-2">
-            Wind <br />
+            <span class="material-symbols-outlined"> air </span>
+            <div>Wind</div>
             <strong>{props.data.wind} km/h</strong>
           </div>
           <div className="col-5 additional-info-box m-1 p-2">
-            Air pressure <br />
+            <span class="material-symbols-outlined"> airware </span>
+            <div>Air pressure</div>
             <strong>{props.data.airPressure} hPa</strong>
           </div>
         </div>
