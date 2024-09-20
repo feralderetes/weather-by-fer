@@ -30,8 +30,34 @@ export default function App() {
           <Weather />
         </main>
         <footer className="mt-4 pt-3">
-          Coded by Fer Alderetes 👩🏻‍💻, open-sourced on Github and hosted on
-          Netlify
+          Coded by{" "}
+          <a
+            href="https://github.com/feralderetes/"
+            target="_blank"
+            rel="noreferrer"
+            title="Github profile"
+          >
+            Fer Alderetes
+          </a>{" "}
+          👩🏻‍💻, open-sourced on{" "}
+          <a
+            href="https://github.com/feralderetes/weather-by-fer/"
+            target="_blank"
+            rel="noreferrer"
+            title="Github repository"
+          >
+            Github
+          </a>{" "}
+          and hosted on
+          <a
+            href="https://weather-by-fer.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+            title="Netlify hosted website"
+          >
+            {" "}
+            Netlify
+          </a>
         </footer>
       </div>
     </div>
