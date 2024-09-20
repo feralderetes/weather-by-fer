@@ -27,7 +27,7 @@ export default function App() {
           </form>
         </header>{" "}
         <main>
-          <Weather />
+          <Weather defaultCity="Amsterdam" />
         </main>
         <footer className="mt-4 pt-3">
           Coded by{" "}
