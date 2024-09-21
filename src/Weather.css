@@ -19,3 +19,12 @@
   background: rgba(92, 92, 211, 1);
   color: white;
 }
+
+.Weather .units {
+  position: relative;
+  left: 88%;
+}
+
+.Weather .active {
+  font-weight: bold;
+}
