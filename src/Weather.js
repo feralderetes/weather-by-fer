@@ -6,22 +6,10 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
-  const [weatherData, setWeatherData] = useState({ loaded: false });
-
-  function searchCity() {
-    const apiKey = "4a6baff0aba2ofc3b32f2f5atce330d1";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    searchCity();
-  }
+  const [weatherData, setWeatherData] = useState({
+    loaded: false,
+  });
+  const apiKey = "4a6baff0aba2ofc3b32f2f5atce330d1";
 
   function handleResponse(response) {
     setWeatherData({
@@ -37,6 +25,20 @@ export default function Weather(props) {
       airPressure: response.data.temperature.pressure,
       loaded: true,
     });
+  }
+
+  function searchCity() {
+    let currentWeatherApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(currentWeatherApiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    searchCity();
+  }
+
+  function updateCity(event) {
+    setCity(event.target.value);
   }
 
   if (weatherData.loaded) {
@@ -66,7 +68,7 @@ export default function Weather(props) {
         </header>{" "}
         <main>
           <WeatherInfo data={weatherData} />
-          <WeatherForecast />
+          <WeatherForecast city={city} apiKey={apiKey} />
         </main>
       </div>
     );

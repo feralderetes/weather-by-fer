@@ -10,7 +10,11 @@ export default function FormattedDate(props) {
     "Friday",
     "Saturday",
   ];
+
+  const daysShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   let day = days[props.date.getDay()];
+  let dayShort = daysShort[props.date.getDay()];
   let hours = props.date.getHours();
   let minutes = props.date.getMinutes();
 
@@ -22,9 +26,13 @@ export default function FormattedDate(props) {
     minutes = `0${minutes}`;
   }
 
-  return (
-    <span>
-      {day} {hours}:{minutes}
-    </span>
-  );
+  if (props.dateStyle === "short") {
+    return <span>{dayShort}</span>;
+  } else {
+    return (
+      <span>
+        {day} {hours}:{minutes}
+      </span>
+    );
+  }
 }

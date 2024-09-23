@@ -34,7 +34,9 @@ export default function WeatherInfo(props) {
         <div className="additional-info col-6">
           <div className="row">
             <div className="col-5 additional-info-box m-2 p-2">
-              <span class="material-symbols-outlined">device_thermostat</span>
+              <span className="material-symbols-outlined">
+                device_thermostat
+              </span>
               <div>Feels Like</div>
               <strong>
                 <Temperature temperature={props.data.feelsLike} units={units} />
@@ -42,7 +44,7 @@ export default function WeatherInfo(props) {
               </strong>
             </div>
             <div className="col-5 additional-info-box m-2 p-2">
-              <span class="material-symbols-outlined">
+              <span className="material-symbols-outlined">
                 humidity_percentage{" "}
               </span>
               <div>Humidity</div>
@@ -51,19 +53,20 @@ export default function WeatherInfo(props) {
           </div>
           <div className="row">
             <div className="col-5 additional-info-box m-2 p-2">
-              <span class="material-symbols-outlined"> air </span>
+              <span className="material-symbols-outlined"> air </span>
               <div>Wind</div>
               <strong>{props.data.wind} km/h</strong>
             </div>
             <div className="col-5 additional-info-box m-2 p-2">
-              <span class="material-symbols-outlined"> airware </span>
+              <span className="material-symbols-outlined"> airware </span>
               <div>Air pressure</div>
               <strong>{props.data.airPressure} hPa</strong>
             </div>
           </div>
         </div>
         <div className="last-updated mt-2">
-          Last updated: <FormattedDate date={props.data.date} />
+          Last updated:{" "}
+          <FormattedDate date={props.data.date} dateStyle="long" />
         </div>
       </div>
     </div>

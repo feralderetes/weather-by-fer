@@ -12,6 +12,14 @@
   background: rgba(92, 92, 211, 0.09);
 }
 
+.WeatherForecast-day {
+  font-size: 14px;
+}
+
+.WeatherForecast-day-icon img {
+  width: 10%;
+}
+
 .WeatherForecast-max-temp {
   color: rgba(92, 92, 211, 0.9);
   margin-right: 10px;

@@ -20,10 +20,6 @@
   font-weight: bold;
 }
 
-.WeatherInfo .temperature-icon {
-  font-size: 60px;
-}
-
 .WeatherInfo .condition {
   color: rgba(92, 92, 211, 1);
   font-size: 28px;
