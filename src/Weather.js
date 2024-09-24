@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherUnits from "./WeatherUnits";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
+  const [units, setUnits] = useState("celsius");
   const [weatherData, setWeatherData] = useState({
     loaded: false,
   });
   const apiKey = "4a6baff0aba2ofc3b32f2f5atce330d1";
+
+  function changeUnits(units) {
+    setUnits(units);
+  }
 
   function handleResponse(response) {
     setWeatherData({
@@ -67,8 +73,13 @@ export default function Weather(props) {
           </form>
         </header>{" "}
         <main>
-          <WeatherInfo data={weatherData} />
-          <WeatherForecast city={weatherData.city} apiKey={apiKey} />
+          <WeatherUnits handleUnitsChange={changeUnits} />
+          <WeatherInfo data={weatherData} units={units} />
+          <WeatherForecast
+            city={weatherData.city}
+            units={units}
+            apiKey={apiKey}
+          />
         </main>
       </div>
     );

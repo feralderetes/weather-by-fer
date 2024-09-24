@@ -1,26 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import FormattedDate from "./FormattedDate";
-import WeatherUnits from "./WeatherUnits";
 import Temperature from "./Temperature";
 import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
-  const [units, setUnits] = useState("celsius");
-
-  function changeUnits(units) {
-    setUnits(units);
-  }
-
   return (
     <div className="WeatherInfo">
-      <WeatherUnits handleUnitsChange={changeUnits} />
       <div className="row mt-3">
         <div className="current-weather col-6">
           <h1>{props.data.city},</h1>
           <h2>{props.data.country}</h2>
           <div className="temperature">
             <div className="temperature-value">
-              <Temperature temperature={props.data.temperature} units={units} />
+              <Temperature
+                temperature={props.data.temperature}
+                units={props.units}
+              />
             </div>
             <span className="temperature-degrees">°</span>
             <span className="temperature-icon">
@@ -39,7 +34,10 @@ export default function WeatherInfo(props) {
               </span>
               <div>Feels Like</div>
               <strong>
-                <Temperature temperature={props.data.feelsLike} units={units} />
+                <Temperature
+                  temperature={props.data.feelsLike}
+                  units={props.units}
+                />
                 °
               </strong>
             </div>

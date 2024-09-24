@@ -1,18 +1,11 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 export default function WeatherForecastDay(props) {
   function day() {
     let date = new Date(props.data.time * 1000);
     return date;
-  }
-
-  function maxTemp() {
-    return `${Math.round(props.data.temperature.maximum)}°`;
-  }
-
-  function minTemp() {
-    return `${Math.round(props.data.temperature.minimum)}°`;
   }
 
   return (
@@ -27,8 +20,20 @@ export default function WeatherForecastDay(props) {
         ></img>
       </div>
       <div>
-        <strong className="WeatherForecast-max-temp">{maxTemp()}</strong>
-        <span className="WeatherForecast-min-temp">{minTemp()}</span>
+        <strong className="WeatherForecast-max-temp">
+          <Temperature
+            temperature={props.data.temperature.maximum}
+            units={props.units}
+          />
+          °
+        </strong>
+        <span className="WeatherForecast-min-temp">
+          <Temperature
+            temperature={props.data.temperature.minimum}
+            units={props.units}
+          />
+          °
+        </span>
       </div>
     </div>
   );
