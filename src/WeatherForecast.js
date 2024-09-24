@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
-  const [forecastData, setForecastData] = useState({ loaded: false });
+  const [forecastData, setForecastData] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
-    setForecastData({
-      date: new Date(response.data.daily[1].time * 1000),
-      iconUrl: response.data.daily[1].condition.icon_url,
-      condition: response.data.daily[1].condition.description,
-      max: response.data.daily[1].temperature.maximum,
-      min: response.data.daily[1].temperature.minimum,
-      loaded: true,
-    });
+    setForecastData(response.data.daily);
+    setLoaded(true);
   }
 
   function getForecast() {
@@ -22,34 +17,21 @@ export default function WeatherForecast(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function maxTemp() {
-    return `${Math.round(forecastData.max)}°`;
-  }
-
-  function minTemp() {
-    return `${Math.round(forecastData.min)}°`;
-  }
-
-  if (forecastData.loaded) {
+  if (loaded) {
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <div className="WeatherForecast-day">
-              <FormattedDate date={forecastData.date} dateStyle="short" />
-            </div>
-
-            <div className="WeatherForecast-day-icon">
-              <img
-                src={forecastData.iconUrl}
-                alt={forecastData.condition}
-              ></img>
-            </div>
-            <div>
-              <strong className="WeatherForecast-max-temp">{maxTemp()}</strong>
-              <span className="WeatherForecast-min-temp">{minTemp()}</span>
-            </div>
-          </div>
+          {forecastData.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );
