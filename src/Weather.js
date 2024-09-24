@@ -68,7 +68,7 @@ export default function Weather(props) {
         </header>{" "}
         <main>
           <WeatherInfo data={weatherData} />
-          <WeatherForecast city={city} apiKey={apiKey} />
+          <WeatherForecast city={weatherData.city} apiKey={apiKey} />
         </main>
       </div>
     );
