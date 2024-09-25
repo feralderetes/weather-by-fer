@@ -49,3 +49,48 @@
   font-size: 14px;
   opacity: 0.5;
 }
+
+@media (max-width: 620px) {
+  .WeatherInfo h1 {
+    font-size: 32px;
+  }
+
+  .WeatherInfo h2 {
+    font-size: 22px;
+  }
+
+  .WeatherInfo .temperature-value {
+    font-size: 58px;
+  }
+
+  .WeatherInfo .temperature-degrees {
+    margin-top: 10px;
+    font-size: 34px;
+  }
+
+  .WeatherInfo .temperature-icon img {
+    height: 82px;
+  }
+
+  .WeatherInfo .condition {
+    font-size: 20px;
+  }
+
+  .WeatherInfo .additional-info {
+    font-size: 14px;
+  }
+
+  .WeatherInfo .last-updated {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .WeatherInfo .current-weather {
+    text-align: center;
+  }
+
+  .WeatherInfo .temperature {
+    justify-content: center;
+  }
+}

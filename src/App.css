@@ -26,3 +26,19 @@ a:hover {
   color: rgba(92, 92, 211, 1);
   text-decoration: underline;
 }
+
+@media (max-width: 620px) {
+  .container {
+    max-width: 95%;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  footer {
+    font-size: 8px;
+  }
+}

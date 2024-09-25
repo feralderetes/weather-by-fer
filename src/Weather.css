@@ -28,3 +28,29 @@
 .Weather .active {
   font-weight: bold;
 }
+
+@media (max-width: 620px) {
+  .Weather form {
+    margin-right: 20px;
+  }
+
+  .Weather .search-bar,
+  .search-btn {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 420px) {
+  .Weather form {
+    margin-right: 30px;
+  }
+
+  .Weather .search-bar,
+  .search-btn {
+    font-size: 70%;
+  }
+
+  .Weather .units {
+    left: 82%;
+  }
+}

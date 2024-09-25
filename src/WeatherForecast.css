@@ -3,7 +3,6 @@
   margin-top: 1%;
   padding: 15px;
   text-align: center;
-  line-height: 1.5;
   background: rgba(92, 92, 211, 0.05);
   transition: all 200ms ease-in-out;
 }
@@ -28,4 +27,24 @@
 .WeatherForecast-min-temp {
   font-weight: 500;
   opacity: 0.5;
+}
+
+@media (max-width: 620px) {
+  .WeatherForecast-day,
+  .WeatherForecast-max-temp,
+  .WeatherForecast-min-temp {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .WeatherForecast-day,
+  .WeatherForecast-max-temp,
+  .WeatherForecast-min-temp {
+    font-size: 8px;
+  }
+
+  .WeatherForecast-day-icon img {
+    width: 100%;
+  }
 }
