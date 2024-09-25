@@ -33,11 +33,11 @@
   .WeatherForecast-day,
   .WeatherForecast-max-temp,
   .WeatherForecast-min-temp {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 440px) {
   .WeatherForecast-day,
   .WeatherForecast-max-temp,
   .WeatherForecast-min-temp {
@@ -46,5 +46,13 @@
 
   .WeatherForecast-day-icon img {
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .WeatherForecast-day,
+  .WeatherForecast-max-temp,
+  .WeatherForecast-min-temp {
+    font-size: 6px;
   }
 }
