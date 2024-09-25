@@ -30,15 +30,17 @@
 }
 
 @media (max-width: 620px) {
-  .WeatherForecast-day,
   .WeatherForecast-max-temp,
   .WeatherForecast-min-temp {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 440px) {
-  .WeatherForecast-day,
+@media (max-width: 445px) {
+  .WeatherForecast-day {
+    font-size: 12px;
+  }
+
   .WeatherForecast-max-temp,
   .WeatherForecast-min-temp {
     font-size: 8px;
@@ -49,8 +51,11 @@
   }
 }
 
-@media (max-width: 360px) {
-  .WeatherForecast-day,
+@media (max-width: 375px) {
+  .WeatherForecast-day {
+    font-size: 10px;
+  }
+
   .WeatherForecast-max-temp,
   .WeatherForecast-min-temp {
     font-size: 6px;
